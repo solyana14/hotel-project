@@ -1,0 +1,18 @@
+<!-- <h2>Solis HOtels</h2>
+<ul class="heroes" >
+   <li *ngFor= "let hotel of hotels">
+
+       <span class="badge">{{hotel.HotelName}}</span>
+   </li> 
+</ul> -->
+<!-- <app-hotel-details></app-hotel-details> -->
+<div *ngIf = hotels style="position: relative;margin:auto;width: 70%; padding: 5%;" >
+    <div  *ngFor= "let newhotel of hotels" class = " " style="max-width: 1000px;">
+        <!-- <app-hotel-details [hotel] = "newhotel"></app-hotel-details> -->
+        <app-hotels [hotel] = "newhotel"></app-hotels>
+
+    </div>
+</div>
+
+
+        <!-- <img src={{hotel.DefaultPicture}} class="img rounded float-start" style=" object-fit: cover;"/> -->

@@ -1,0 +1,17 @@
+{
+  "/api/hotels": {
+    "target": "http://traddis.com/",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/api/hotels/*": {
+    "target": "http://traddis.com/",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/api/rooms*": {
+    "target": "http://traddis.com/",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

@@ -1,0 +1,37 @@
+.hotel-content{
+    color: #00838d;
+    margin: 0;
+    padding: 2% ;
+
+}
+
+
+.hotel-content-container{
+    padding: 10px 20px;
+}
+.star-level{
+    text-align: right;
+}
+.payment-method-container{
+
+}
+.go-corner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    background-color: #00838d;
+    border-radius: 0 4px 0 32px;
+  }
+  
+  .go-arrow {
+    margin-top: -4px;
+    margin-right: -4px;
+    color: white;
+    font-family: courier, sans;
+  }

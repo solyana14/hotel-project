@@ -1,0 +1,63 @@
+
+  <img src={{hotel.DefaultPicture}} class="card-img" style="height: 600px;height:480px;padding:0 5% 0 5%"/>
+
+  <mat-tab-group mat-align-tabs="center">
+    
+    <mat-tab label="OverView">
+        <div class="row">
+            <div class="col hotel-content container">
+                <div style=" padding-bottom: 1%;">
+                    <h3 class="card-title" style="margin: 0;">{{hotel.HotelName}}</h3>
+                    <p class='star-level' style="text-align: left;"><i *ngFor='let in of counter() ;let i = index' class="fa fa-star"></i></p>
+                </div>
+                <p class="card-text "><i class="fa fa-location-arrow"> </i> {{hotel.StreetAddress1 | titlecase}} , {{hotel.StreetAddress2 | titlecase}}</p>
+                <blockquote class="blockquote mb-0">
+                    <p class="text-muted">{{hotel.Description | titlecase}} </p>
+                    <footer class="blockquote-footer">Pricing <cite title="Source Title">{{hotel.PricingDisplay}}</cite></footer>
+                </blockquote>
+                <p class="card-text"><small class="text-muted">{{hotel.City}}</small></p>
+               
+            </div>
+
+            <div class="col hotel-content container payment-method-container">
+                <h4 class="card-title">Payment Methods</h4>
+                <mat-chip-list>
+                    <mat-chip   style="background-color: #00838d;color: #ffffff;"*ngFor ="let payment of hotel.PaymentMethods"> {{payment.Name}}</mat-chip>
+                
+                </mat-chip-list>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Rooms">
+        <div *ngIf = "!rooms?.length" class="hotel-content">
+            <h3 >No room Available</h3>
+        </div>
+     
+        <div  style="width: 75%; margin: auto; padding: 1%; height: 300px;" class="card-group"  *ngFor = "let room of rooms">
+            <div class="card">
+                <div class="card-body text-center">
+                  <!-- <p class="card-text">Some text inside the first card</p> -->
+                  <img src={{room.DefaultPicture}} class="img rounded float-start " style=" width:100%;max-height:100%;object-fit: cover;"/>
+                </div>
+              </div>
+              <div class="card ">
+                <div class="card-body text-center hotel-content" style="padding:15%">
+                    <h3>{{room.Name}}, {{room.Beds}} Beds</h3>
+                    <h5 class="card-text"><i class='fa fa-bed'> {{room.Beds}} Beds</i></h5>
+                    <h5 class="card-text"><i class='fa fa-users'> {{room.MaxAdult}} People</i></h5>
+                    <p>{{room.RoomDescription}}</p>
+                    <h3 class="blockquote-footer" style="font-size:20px">Pricing {{room.Price}}</h3>
+                </div>
+              </div>
+
+            
+              
+          
+        </div>
+            
+            
+    </mat-tab>
+    <!-- <mat-tab label="Third">Content 3</mat-tab> -->
+  </mat-tab-group>
+
+
